@@ -9,7 +9,7 @@ const router = require('./routers/routers');
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin: "https://task31-frontend-5qdm.vercel.app/", 
+    origin: "https://task31-frontend-5qdm.vercel.app", 
     credentials: true
 }))
 app.use(cookieParser())
