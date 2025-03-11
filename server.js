@@ -9,11 +9,11 @@ const router = require('./routers/routers');
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin: true, 
+    origin: "https://task31-frontend-5qdm.vercel.app/", 
     credentials: true
 }))
 app.use(cookieParser())
-const port = 5000
+// const port = 5000
 
 
 app.use('/api/v1', router);
