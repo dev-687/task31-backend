@@ -10,7 +10,14 @@ app.use(express.json())
 //     credentials: true
 // }))
 
-app.use(cors({ origin: "*" }));
+app.use(
+    cors({
+      origin: "https://task31-frontend-5qdm.vercel.app", // Your frontend URL
+      credentials: true, // Allow cookies and authentication headers
+      methods: "GET,POST,PUT,DELETE",
+      allowedHeaders: "Content-Type,Authorization",
+    })
+  );
 app.use(cookieParser())
 // const port = 5000
 app.use('/api/v1', router);
