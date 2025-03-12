@@ -88,6 +88,11 @@ exports.allUser= async (req,res)=>{
 
 /** Logout the current user */
 exports.logout= async (req,res)=>{
-  res.clearCookie('token', { path: '/' });
+  res.clearCookie("token", token, {
+    httpOnly: true,
+    secure: true, 
+    sameSite: "None", 
+    path: '/'
+  });
   res.status(200).json({ message: "Logged out successfully" });
 }
