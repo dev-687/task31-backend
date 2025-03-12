@@ -58,7 +58,7 @@ exports.auth=async (req,res)=>{
   const token=req.cookies.token;
   console.log("token",token);
   
-  if(!token) return res.status(401).json({message:"Unauthorized Access!"});
+  if(!token) return res.status(401).json({message:"Unauthorized Access!","token":token});
   try {
     const user=getUser(token);
     console.log(user);
